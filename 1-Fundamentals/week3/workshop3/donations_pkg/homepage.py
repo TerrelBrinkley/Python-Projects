@@ -13,3 +13,10 @@ def donate(username):
     donation_string = username, "donated $", donation_amt
     print("Thank You for your donation!")
     return donation_string
+
+
+def show_donations(donations):
+    print("\n--- All Donations ---")
+    if donations == []:
+        print("Currently, there are no donations")
+    return donations
