@@ -10,13 +10,14 @@ def show_homepage():
 
 def donate(username):
     donation_amt = input("\nEnter amount to donate: ")
-    donation_string = username, "donated $", donation_amt
-    print("Thank You for your donation!")
+    print(f'{username} donated ${donation_amt}\nThank you for your donation!\n')
+    donation_string = username + " donated $" + donation_amt
     return donation_string
 
 
 def show_donations(donations):
     print("\n--- All Donations ---")
-    if donations == []:
-        print("Currently, there are no donations")
-    return donations
+    if donations:
+        print(donations)
+    else:
+        print("Currently, there are no donations.")

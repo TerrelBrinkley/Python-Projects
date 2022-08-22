@@ -33,10 +33,10 @@ while True:
         if authorized_user == "":
             print("\nYou are not logged in.")
         else:
-            donation_string = donate("authorized_user")
-            print("")
+            donation_string = donate(authorized_user)
+            donations.append(donation_string)
     elif (user_option == "4"):
-        print(show_donations(donations))
+        show_donations(donations)
     elif (user_option == "5"):
         print("Goodbye", authorized_user)
         break
