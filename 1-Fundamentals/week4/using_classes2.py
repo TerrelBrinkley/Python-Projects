@@ -10,7 +10,7 @@ class User:
 
 
 user1 = User("jane", "jane@nucamp.co", "janespassword")
-print(user1.password)
+print("Your current password is:", user1.password)
 
 updatedPassword = input("Please enter a new password: ")
 
