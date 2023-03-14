@@ -33,7 +33,7 @@ while True:
     elif character == "3" or character == "human":
         character = human
         my_hp = human_hp
-        my_dmg = human_damage
+        my_damage = human_damage
         break
     else:
         print("That is not a valid option")
