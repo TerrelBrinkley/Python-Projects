@@ -5,6 +5,10 @@ class User:
         self.password = password
 
     def change_password(self, password):
+        """
+
+        :rtype: object
+        """
         self.password = password
         print("Your password has been changed to", self.password)
 
