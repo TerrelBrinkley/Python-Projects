@@ -11,6 +11,10 @@ class User:
 
 class BankUser(User):
     def __init__(self, name, email, password):
+        """
+
+        :rtype: object
+        """
         super().__init__(name, email, password)
         self.balance = 0
 
