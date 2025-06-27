@@ -1,60 +1,62 @@
-wizard = "Wizard"
-elf = "Elf"
-human = "Human"
+"""A simple text-based battle game where players fight a dragon."""
 
-wizard_hp = 70
-elf_hp = 100
-human_hp = 150
+WIZARD = "Wizard"
+ELF = "Elf"
+HUMAN = "Human"
 
-wizard_damage = 150
-elf_damage = 100
-human_damage = 20
+WIZARD_HP = 70
+ELF_HP = 100
+HUMAN_HP = 150
 
-dragon_hp = 300
-dragon_damage = 50
+WIZARD_DAMAGE = 150
+ELF_DAMAGE = 100
+HUMAN_DAMAGE = 20
+
+DRAGON_HP = 300
+DRAGON_DAMAGE = 50
 
 while True:
     print('Select a Character')
     print("Wizard")
     print("Elf")
     print("Human")
-    character = input('Choose your character:').lower()
+    chosen_character = input('Choose your character:').lower()
 
-    if character == "1" or character == "wizard":
-        character = wizard
-        my_hp = wizard_hp
-        my_damage = wizard_damage
+    if chosen_character == "1" or chosen_character == "wizard":
+        chosen_character = WIZARD
+        current_hp = WIZARD_HP
+        damage_dealt = WIZARD_DAMAGE
         break
-    elif character == "2" or character == "elf":
-        character = elf
-        my_hp = elf_hp
-        my_damage = elf_damage
+    elif chosen_character == "2" or chosen_character == "elf":
+        chosen_character = ELF
+        current_hp = ELF_HP
+        damage_dealt = ELF_DAMAGE
         break
-    elif character == "3" or character == "human":
-        character = human
-        my_hp = human_hp
-        my_damage = human_damage
+    elif chosen_character == "3" or chosen_character == "human":
+        chosen_character = HUMAN
+        current_hp = HUMAN_HP
+        damage_dealt = HUMAN_DAMAGE
         break
     else:
         print("That is not a valid option")
 
-print(character)
-print(my_hp)
-print(my_damage)
+print(chosen_character)
+print(current_hp)
+print(damage_dealt)
 
 while True:
-    dragon_hp = dragon_hp - my_damage
-    print("The", character, "damaged the Dragon!")
-    print("The Dragons hitpoints are now: ", dragon_hp)
+    DRAGON_HP -= damage_dealt
+    print("The", chosen_character, "damaged the Dragon!")
+    print("The Dragons hitpoints are now: ", DRAGON_HP)
 
-    if(dragon_hp <= 0):
+    if DRAGON_HP <= 0:
         print("The Dragon has lost the battle")
         break
 
-    my_hp -= dragon_damage
-    print("The Dragon strikes back at ", character, "!")
-    print("The", character, "hitpoints are now: ", my_hp)
+    current_hp -= DRAGON_DAMAGE
+    print("The Dragon strikes back at ", chosen_character, "!")
+    print("The", chosen_character, "hitpoints are now: ", current_hp)
 
-    if(my_hp < 0):
-        print("The ", character, "has lost the battle!")
+    if current_hp < 0:
+        print("The ", chosen_character, "has lost the battle!")
         break
